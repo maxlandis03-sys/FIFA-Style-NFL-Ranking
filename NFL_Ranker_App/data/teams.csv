@@ -1,0 +1,136 @@
+teamID,displayName,activeFrom,activeTo,lineage Notes
+ID000,Independent,1920,1920,Multiple Teams
+AP001,Akron Pros,1920,1925,"Original Team, became the Akron Indians"
+DS002,Decatur Staleys,1920,1920,"Original Team, became Chicago Staleys"
+BA003,Buffalo All-Americans,1920,1923,"Original Team, became Buffalo Bisons"
+CC004,Chicago Cardinals,1920,1959,"Original Team, Merged into Chi/Pit Cards/Steelers in 1944, Unmerged after 1944, Became St. Louis Cardinals"
+RI005,Rock Island Independents,1920,1925,Original Team
+DT006,Dayton Triangles,1920,1929,Original Team
+RJ007,Rochester Jeffersons,1920,1925,Original Team
+CB008,Canton Bulldogs,1920,1926,"Original Team, Merged into Cleveland Bulldogs in 1924, Unmerged back into the Canton Bulldogs after 1925"
+DH009,Detroit Heralds,1920,1920,Original Team
+CT010,Cleveland Tigers,1920,1920,"Original Team, became Cleveland Indians"
+CT011,Chicago Tigers,1920,1920,Original Team
+HP012,Hammond Pros,1920,1926,Original Team
+CP013,Columbus Panhandles,1920,1922,"Original Team, became Columbus Tigers"
+MF014,Muncie Flyers,1920,1921,Original Team
+CS015,Chicago Staleys,1921,1921,"Renamed from Decatur Staleys (0002), became Chicago Bears"
+CI016,Cleveland Indians,1921,1921,Renamed from Cleveland Tigers (0010)
+DT017,Detroit Tigers,1921,1921,
+CC018,Cincinnati Celts,1921,1921,
+EG019,Evansville Crimson Giants,1921,1922,
+GP020,Green Bay Packers,1921,Present,
+LB021,Louisville Brecks,1921,1923,Rejoin league in 1926 as the Louisville Colonels
+MM022,Minneapolis Marines,1921,1924,Rejoined in 1929 as Minneapolis Red Jackets
+NG023,New York Brickley Giants,1921,1921,
+TK024,Tonawanda Kardex,1921,1921,
+WS025,Washington Senators,1921,1921,
+CB026,Chicago Bears,1922,Present,Renamed from Chicago Staleys (0015)
+MB027,Milwaukee Badgers,1922,1926,
+OI028,Oorang Indians,1922,1923,
+RL029,Racine Legion,1922,1924,Rejoin league in 1926 as Racine Tornadoes
+TM030,Toledo Maroons,1922,1923,
+CT031,Columbus Tigers,1923,1926,Renamed from the Columbus Panhandles (0013)
+CI032,Cleveland Indians,1923,1923,"Same Name, New Org, Merged into Cleveland Bulldogs"
+DK033,Duluth Kelleys,1923,1925,became the Duluth Eskimos
+SA034,St. Louis All-Stars,1923,1923,
+CB035,Cleveland Bulldogs,1924,1927,"Merged Team (0008 + 0032), left NFL after 1925, Rejoined in 1927"
+BB036,Buffalo Bisons,1924,1925,"Renamed from Buffalo All-Americans (0003), Became the Buffalo Rangers"
+FY037,Frankford Yellow Jackets,1924,1931,
+KB038,Kansas City Blues,1924,1924,Became Kansas City Cowboys
+KM039,Kenosha Maroons,1924,1924,
+KC040,Kansas City Cowboys,1925,1926,Renamed from Kasas City Blues (0038)
+DP041,Detroit Panthers,1925,1926,
+NG042,New York Giants,1925,Present,
+PM043,Pottsville Maroons,1925,1928,Became the Boston Bulldogs
+PS044,Providence Steam Roller,1925,1931,
+RT045,Racine Tornadoes,1926,1926,Renamed from the Racine Legion (0029)
+LC046,Louisville Colonels,1926,1926,Renamed from the Lousiville Brecks (0021)
+DE047,Duluth Eskimos,1926,1927,Renamed from the Duluth Kelleys (0033)
+AI048,Akron Indians,1926,1926,Renamed from the Akron Pros (0001)
+BR049,Buffalo Rangers,1926,1926,"Renamed from the Buffalo Bisons (0036), Became the Buffalo Bisons"
+BL050,Brooklyn Lions,1926,1926,
+HB051,Hartford Blues,1926,1926,
+LB052,Los Angeles Buccaneers,1926,1926,
+BB053,Buffalo Bisons,1927,1929,"Renamed from the Buffalo Rangers (0049), Left NFL after 1927, rejoin in 1929"
+NY054,New York Yankees,1927,1928,
+DW055,Detroit Wolverines,1928,1928,
+BB056,Boston Bulldogs,1929,1929,Renamed from Potsville Maroons (0043)
+MR057,Minneapolis Red Jackets,1929,1930,Renamed from the Minneapolis Marines (0022)
+OT058,Orange Tornadoes,1929,1929,Became Newark Tornadoes
+SS059,Staten Island Stapletons,1929,1932,
+NT060,Newark Tornadoes,1930,1930,Renamed from the Oragne Tornadoes (0058)
+BD061,Brooklyn Dodgers,1930,1943,Became the Brooklyn Tigers
+PS062,Portsmouth Spartans,1930,1933,Became Detroit Lions
+CI063,Cleveland Indians,1931,1931,"Same Name, New Org"
+BB064,Boston Braves,1932,1932,Became Boston Redskins
+BR065,Boston Redskins,1933,1936,"Renamed from the Boston Braves (0064), Became the Washington Redskins"
+PE066,Philadelphia Eagles,1933,Present,Merged into Phi/Pit Eagles/Steelers in 1943
+PP067,Pittsburgh Pirates,1933,1939,Became the Pittsburgh Steelers
+CR068,Cincinnati Reds,1933,1934,
+DL069,Detroit Lions,1934,Present,Renamed from the Portsmouth Spartans (0062)
+SG070,St. Louis Gunners,1934,1934,
+WR071,Washington Redskins,1937,2019,"Renamed from the Boston Redskins (0065), Became Washington Football Team"
+CR072,Cleveland Rams,1937,1945,"Left NFL in 1942. Rejoined in 1944, Became Los Angeles Rams"
+PS073,Pittsburgh Steelers,1940,Present,"Renamed from the Pittsburgh Pirates (0067), Merged into Phi/Pit Eagles/Steelers in 1943, Unmerged in 1943, Merged into Chi/Pit/ Cards/Steelers in 1944, Unmerged in 1944"
+PE074,Phi/Pit Eagles/Steelers,1943,1943,"Merged team (0066 + 0073), Unmerged (0066 +0073)"
+CC075,Chi/Pit Cards/Steelers,1944,1944,"Merged Team (0004 + 0073), Unmerged (0004 + 0073)"
+BT076,Brooklyn Tigers,1944,1944,"Renamed from Brooklyn Dodgers (0061), Merged in Bos/Bkn Yanks/Tigers in 1945"
+BY077,Boston Yanks,1944,1944,Merged in Bos/Bkn Yanks/Tigers in 1945
+BY078,Bos/Bkn Yanks/Tigers,1945,1945,"Merged Team (0076 + 0077), became Boston Yanks"
+LR079,Los Angeles Rams,1946,1994,"Renamed from the Cleveland Rams (0072), Became St. Louis Rams"
+BY080,Boston Yanks,1946,1948,Renamed from Bos/Bkn Yanks/Tigers (0078)
+NY081,New York Yankees,1946,1948,Merged into New York Yankees
+BB082,Buffalo Bisons,1946,1946,Became the Buffalo Bills
+BD083,Brooklyn Dodgers,1946,1948,Merged into New York Yankees
+MS084,Miami Seahawks,1946,1946,
+CB085,Cleveland Browns,1946,Present,"Left NFL after 1995, Rejoin in 1999"
+S4086,San Francisco 49ers,1946,Present,
+LD087,Los Angeles Dons,1946,1949,
+CR088,Chicago Rockets,1946,1948,Became Chicago Hornets
+BB089,Buffalo Bills,1947,1949,Renamed from the Buffalo Bisons (0082)
+BC090,Baltimore Colts,1947,1950,
+NY091,New York Yankees,1949,1949,Merged Team (0081 + 0083)
+CH092,Chicago Hornets,1949,1949,Renamed from Chicago Rockets (0088)
+NB093,New York Bulldogs,1949,1949,Became New York Yanks
+NY094,New York Yanks,1950,1951,Renamed from the New York Bulldogs (0093)
+DT095,Dallas Texans,1952,1952,
+BC096,Baltimore Colts,1953,1983,Became Indianapolis Colts
+SC097,St. Louis Cardinals,1960,1987,Renamed from Chicago Cardinals (0004)
+DC098,Dallas Cowboys,1960,Present,
+HO099,Houston Oilers,1960,1996,Became Tennessee Oilers
+NT100,New York Titans,1960,1962,Became New York Jets
+BB101,Buffalo Bills,1960,Present,
+BP102,Boston Patriots,1960,1970,Became New England Patriots
+LC103,Los Angeles Chargers,1960,1960,Became San Diego Chargers
+DT104,Dallas Texans,1960,1962,Became Kasas City Chiefs
+OR105,Oakland Raiders,1960,1981,Became Los Angeles Raiders
+DB106,Denver Broncos,1960,Present,
+SC107,San Diego Chargers,1961,2016,"Renamed from Los Angeles Chargers (0103), Became Los Angeles Chargers"
+MV108,Minnesota Vikings,1961,Present,
+KC109,Kansas City Chiefs,1963,Present,Renamed from Dallas Texans (0104)
+NJ110,New York Jets,1963,Present,Renamed from New York Titans (0100)
+MD111,Miami Dolphins,1966,Present,
+AF112,Atlanta Falcons,1966,Present,
+NS113,New Orleans Saints,1967,Present,
+CB114,Cincinnati Bengals,1968,Present,
+NP115,New England Patriots,1971,Present,Renamed from Boston Patriots (0102)
+TB116,Tampa Bay Buccaneers,1976,Present,
+SS117,Seattle Seahawks,1976,Present,
+LR118,Los Angeles Raiders,1982,1994,"Renamed from Oakland Raiders (0105), Became Oakland Raiders"
+IC119,Indianapolis Colts,1984,Present,Renamed from Baltimore Colts (0096)
+PC120,Phoenix Cardinals,1988,1993,"Renamed from St. Louis Cardinals (0097), Became Arizona Cardinals"
+AC121,Arizona Cardinals,1994,Present,Renamed from Phoenix Cardinals (0120)
+OR122,Oakland Raiders,1995,2019,"Renamed from Los Angeles Raiders (0118), Became Los Vegas Raiders"
+SR123,St. Louis Rams,1995,2015,"Renamed from the Los Angeles Rams (0079), Became Los Angeles Rams"
+CP124,Carolina Panthers,1995,Present,
+JJ125,Jacksonville Jaguars,1995,Present,
+BR126,Baltimore Ravens,1996,Present,
+TO127,Tennessee Oilers,1997,1998,"Renamed from Houston Oilers (0099), Became Tennessee Titans"
+TT128,Tennessee Titans,1999,Present,Renamed from Tennessee Oilers (0127)
+HT129,Houston Texans,2002,Present,
+LR130,Los Angeles Rams,2016,Present,Renamed from St. Lous Rams (0123)
+LC131,Los Angeles Chargers,2017,Present,Renamed from San Diego Chargers (0107)
+LR132,Las Vegas Raiders,2020,Present,Renamed from Oakland Raiders (0122)
+WT133,Washington Football Team,2020,2021,"Renamed from Washington Redskins (0071), Became Washington Commanders"
+WC134,Washington Commanders,2022,Present,Renamed from Washington Football Team (0133)

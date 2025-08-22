@@ -1,0 +1,273 @@
+upcoming_ID,league_indicator,season,week_order,week_label,importance,team_a_display,team_a_ID,team_b_display,team_b_ID
+1,N,2025,1,1,DR,Dallas Cowboys,DC098,Philadelphia Eagles,PE066
+2,N,2025,1,1,DR,Kansas City Chiefs,KC109,Los Angeles Chargers,LC131
+3,N,2025,1,1,DR,Tampa Bay Buccaneers,TB116,Atlanta Falcons,AF112
+4,N,2025,1,1,DR,Cincinnati Bengals,CB114,Cleveland Browns,CB085
+5,N,2025,1,1,CR,Miami Dolphins,MD111,Indianapolis Colts,IC119
+6,N,2025,1,1,NCR,Carolina Panthers,CP124,Jacksonville Jaguars,JJ125
+7,N,2025,1,1,CR,Arizona Cardinals,AC121,New Orleans Saints,NS113
+8,N,2025,1,1,CR,Las Vegas Raiders,LR132,New England Patriots,NP115
+9,N,2025,1,1,CR,Pittsburgh Steelers,PS073,New York Jets,NJ110
+10,N,2025,1,1,DR,New York Giants,NG042,Washington Commanders,WC134
+11,N,2025,1,1,CR,Tennessee Titans,TT128,Denver Broncos,DB106
+12,N,2025,1,1,DR,San Francisco 49ers,S4086,Seattle Seahawks,SS117
+13,N,2025,1,1,DR,Detroit Lions,DL069,Green Bay Packers,GP020
+14,N,2025,1,1,NCR,Houston Texans,HT129,Los Angeles Rams,LR130
+15,N,2025,1,1,CR,Baltimore Ravens,BR126,Buffalo Bills,BB101
+16,N,2025,1,1,DR,Minnesota Vikings,MV108,Chicago Bears,CB026
+17,N,2025,2,2,CR,Washington Commanders,WC134,Green Bay Packers,GP020
+18,N,2025,2,2,CR,Jacksonville Jaguars,JJ125,Cincinnati Bengals,CB114
+19,N,2025,2,2,DR,New York Giants,NG042,Dallas Cowboys,DC098
+20,N,2025,2,2,DR,Chicago Bears,CB026,Detroit Lions,DL069
+21,N,2025,2,2,DR,New England Patriots,NP115,Miami Dolphins,MD111
+22,N,2025,2,2,CR,San Francisco 49ers,S4086,New Orleans Saints,NS113
+23,N,2025,2,2,DR,Buffalo Bills,BB101,New York Jets,NJ110
+24,N,2025,2,2,NCR,Los Angeles Rams,LR130,Tennessee Titans,TT128
+25,N,2025,2,2,NCR,Seattle Seahawks,SS117,Pittsburgh Steelers,PS073
+26,N,2025,2,2,DR,Cleveland Browns,CB085,Baltimore Ravens,BR126
+27,N,2025,2,2,CR,Denver Broncos,DB106,Indianapolis Colts,IC119
+28,N,2025,2,2,CR,Carolina Panthers,CP124,Arizona Cardinals,AC121
+29,N,2025,2,2,NCR,Philadelphia Eagles,PE066,Kansas City Chiefs,KC109
+30,N,2025,2,2,CR,Atlanta Falcons,AF112,Minnesota Vikings,MV108
+31,N,2025,2,2,NCR,Tampa Bay Buccaneers,TB116,Houston Texans,HT129
+32,N,2025,2,2,DR,Los Angeles Chargers,LC131,Las Vegas Raiders,LR132
+33,N,2025,3,3,DR,Miami Dolphins,MD111,Buffalo Bills,BB101
+34,N,2025,3,3,DR,Atlanta Falcons,AF112,Carolina Panthers,CP124
+35,N,2025,3,3,NCR,Green Bay Packers,GP020,Cleveland Browns,CB085
+36,N,2025,3,3,DR,Houston Texans,HT129,Jacksonville Jaguars,JJ125
+37,N,2025,3,3,NCR,Cincinnati Bengals,CB114,Minnesota Vikings,MV108
+38,N,2025,3,3,CR,Pittsburgh Steelers,PS073,New England Patriots,NP115
+39,N,2025,3,3,DR,Indianapolis Colts,IC119,Tennessee Titans,TT128
+40,N,2025,3,3,CR,Los Angeles Rams,LR130,Philadelphia Eagles,PE066
+41,N,2025,3,3,NCR,New York Jets,NJ110,Tampa Bay Buccaneers,TB116
+42,N,2025,3,3,NCR,Las Vegas Raiders,LR132,Washington Commanders,WC134
+43,N,2025,3,3,DR,Denver Broncos,DB106,Los Angeles Chargers,LC131
+44,N,2025,3,3,CR,New Orleans Saints,NS113,Seattle Seahawks,SS117
+45,N,2025,3,3,CR,Dallas Cowboys,DC098,Chicago Bears,CB026
+46,N,2025,3,3,DR,Arizona Cardinals,AC121,San Francisco 49ers,S4086
+47,N,2025,3,3,NCR,Kansas City Chiefs,KC109,New York Giants,NG042
+48,N,2025,3,3,NCR,Detroit Lions,DL069,Baltimore Ravens,BR126
+49,N,2025,4,4,DR,Seattle Seahawks,SS117,Arizona Cardinals,AC121
+50,N,2025,4,4,NCR,Minnesota Vikings,MV108,Pittsburgh Steelers,PS073
+51,N,2025,4,4,CR,Washington Commanders,WC134,Atlanta Falcons,AF112
+52,N,2025,4,4,NCR,New Orleans Saints,NS113,Buffalo Bills,BB101
+53,N,2025,4,4,NCR,Cleveland Browns,CB085,Detroit Lions,DL069
+54,N,2025,4,4,DR,Tennessee Titans,TT128,Houston Texans,HT129
+55,N,2025,4,4,NCR,Carolina Panthers,CP124,New England Patriots,NP115
+56,N,2025,4,4,NCR,Los Angeles Chargers,LC131,New York Giants,NG042
+57,N,2025,4,4,CR,Philadelphia Eagles,PE066,Tampa Bay Buccaneers,TB116
+58,N,2025,4,4,NCR,Indianapolis Colts,IC119,Los Angeles Rams,LR130
+59,N,2025,4,4,NCR,Jacksonville Jaguars,JJ125,San Francisco 49ers,S4086
+60,N,2025,4,4,CR,Baltimore Ravens,BR126,Kansas City Chiefs,KC109
+61,N,2025,4,4,NCR,Chicago Bears,CB026,Las Vegas Raiders,LR132
+62,N,2025,4,4,CR,Green Bay Packers,GP020,Dallas Cowboys,DC098
+63,N,2025,4,4,DR,New York Jets,NJ110,Miami Dolphins,MD111
+64,N,2025,4,4,CR,Cincinnati Bengals,CB114,Denver Broncos,DB106
+65,N,2025,5,5,DR,San Francisco 49ers,S4086,Los Angeles Rams,LR130
+66,N,2025,5,5,NCR,Minnesota Vikings,MV108,Cleveland Browns,CB085
+67,N,2025,5,5,NCR,Miami Dolphins,MD111,Carolina Panthers,CP124
+68,N,2025,5,5,CR,Las Vegas Raiders,LR132,Indianapolis Colts,IC119
+69,N,2025,5,5,CR,New York Giants,NG042,New Orleans Saints,NS113
+70,N,2025,5,5,NCR,Dallas Cowboys,DC098,New York Jets,NJ110
+71,N,2025,5,5,NCR,Denver Broncos,DB106,Philadelphia Eagles,PE066
+72,N,2025,5,5,CR,Houston Texans,HT129,Baltimore Ravens,BR126
+73,N,2025,5,5,NCR,Tennessee Titans,TT128,Arizona Cardinals,AC121
+74,N,2025,5,5,CR,Tampa Bay Buccaneers,TB116,Seattle Seahawks,SS117
+75,N,2025,5,5,NCR,Detroit Lions,DL069,Cincinnati Bengals,CB114
+76,N,2025,5,5,NCR,Washington Commanders,WC134,Los Angeles Chargers,LC131
+77,N,2025,5,5,DR,New England Patriots,NP115,Buffalo Bills,BB101
+78,N,2025,5,5,CR,Kansas City Chiefs,KC109,Jacksonville Jaguars,JJ125
+79,N,2025,6,6,DR,Philadelphia Eagles,PE066,New York Giants,NG042
+80,N,2025,6,6,CR,Denver Broncos,DB106,New York Jets,NJ110
+81,N,2025,6,6,CR,Dallas Cowboys,DC098,Carolina Panthers,CP124
+82,N,2025,6,6,NCR,Arizona Cardinals,AC121,Indianapolis Colts,IC119
+83,N,2025,6,6,NCR,Seattle Seahawks,SS117,Jacksonville Jaguars,JJ125
+84,N,2025,6,6,CR,Los Angeles Chargers,LC131,Miami Dolphins,MD111
+85,N,2025,6,6,DR,Cleveland Browns,CB085,Pittsburgh Steelers,PS073
+86,N,2025,6,6,NCR,Los Angeles Rams,LR130,Baltimore Ravens,BR126
+87,N,2025,6,6,CR,San Francisco 49ers,S4086,Tampa Bay Buccaneers,TB116
+88,N,2025,6,6,CR,Tennessee Titans,TT128,Las Vegas Raiders,LR132
+89,N,2025,6,6,NCR,Cincinnati Bengals,CB114,Green Bay Packers,GP020
+90,N,2025,6,6,NCR,New England Patriots,NP115,New Orleans Saints,NS113
+91,N,2025,6,6,NCR,Detroit Lions,DL069,Kansas City Chiefs,KC109
+92,N,2025,6,6,NCR,Buffalo Bills,BB101,Atlanta Falcons,AF112
+93,N,2025,6,6,CR,Chicago Bears,CB026,Washington Commanders,WC134
+94,N,2025,7,7,DR,Pittsburgh Steelers,PS073,Cincinnati Bengals,CB114
+95,N,2025,7,7,NCR,Los Angeles Rams,LR130,Jacksonville Jaguars,JJ125
+96,N,2025,7,7,CR,New Orleans Saints,NS113,Chicago Bears,CB026
+97,N,2025,7,7,CR,Miami Dolphins,MD111,Cleveland Browns,CB085
+98,N,2025,7,7,DR,Las Vegas Raiders,LR132,Kansas City Chiefs,KC109
+99,N,2025,7,7,CR,Philadelphia Eagles,PE066,Minnesota Vikings,MV108
+100,N,2025,7,7,NCR,Carolina Panthers,CP124,New York Jets,NJ110
+101,N,2025,7,7,CR,New England Patriots,NP115,Tennessee Titans,TT128
+102,N,2025,7,7,NCR,New York Giants,NG042,Denver Broncos,DB106
+103,N,2025,7,7,CR,Indianapolis Colts,IC119,Los Angeles Chargers,LC131
+104,N,2025,7,7,CR,Green Bay Packers,GP020,Arizona Cardinals,AC121
+105,N,2025,7,7,DR,Washington Commanders,WC134,Dallas Cowboys,DC098
+106,N,2025,7,7,CR,Atlanta Falcons,AF112,San Francisco 49ers,S4086
+107,N,2025,7,7,CR,Tampa Bay Buccaneers,TB116,Detroit Lions,DL069
+108,N,2025,7,7,NCR,Houston Texans,HT129,Seattle Seahawks,SS117
+109,N,2025,8,8,NCR,Minnesota Vikings,MV108,Los Angeles Chargers,LC131
+110,N,2025,8,8,NCR,Miami Dolphins,MD111,Atlanta Falcons,AF112
+111,N,2025,8,8,NCR,Buffalo Bills,BB101,Carolina Panthers,CP124
+112,N,2025,8,8,CR,New York Jets,NJ110,Cincinnati Bengals,CB114
+113,N,2025,8,8,NCR,San Francisco 49ers,S4086,Houston Texans,HT129
+114,N,2025,8,8,CR,Cleveland Browns,CB085,New England Patriots,NP115
+115,N,2025,8,8,DR,New York Giants,NG042,Philadelphia Eagles,PE066
+116,N,2025,8,8,NCR,Chicago Bears,CB026,Baltimore Ravens,BR126
+117,N,2025,8,8,DR,Tampa Bay Buccaneers,TB116,New Orleans Saints,NS113
+118,N,2025,8,8,DR,Tennessee Titans,TT128,Indianapolis Colts,IC119
+119,N,2025,8,8,NCR,Dallas Cowboys,DC098,Denver Broncos,DB106
+120,N,2025,8,8,NCR,Green Bay Packers,GP020,Pittsburgh Steelers,PS073
+121,N,2025,8,8,NCR,Washington Commanders,WC134,Kansas City Chiefs,KC109
+122,N,2025,9,9,CR,Baltimore Ravens,BR126,Miami Dolphins,MD111
+123,N,2025,9,9,NCR,Chicago Bears,CB026,Cincinnati Bengals,CB114
+124,N,2025,9,9,DR,Minnesota Vikings,MV108,Detroit Lions,DL069
+125,N,2025,9,9,CR,Carolina Panthers,CP124,Green Bay Packers,GP020
+126,N,2025,9,9,CR,Denver Broncos,DB106,Houston Texans,HT129
+127,N,2025,9,9,NCR,Atlanta Falcons,AF112,New England Patriots,NP115
+128,N,2025,9,9,CR,San Francisco 49ers,S4086,New York Giants,NG042
+129,N,2025,9,9,CR,Los Angeles Chargers,LC131,Tennessee Titans,TT128
+130,N,2025,9,9,CR,Indianapolis Colts,IC119,Pittsburgh Steelers,PS073
+131,N,2025,9,9,CR,Jacksonville Jaguars,JJ125,Las Vegas Raiders,LR132
+132,N,2025,9,9,CR,New Orleans Saints,NS113,Los Angeles Rams,LR130
+133,N,2025,9,9,CR,Kansas City Chiefs,KC109,Buffalo Bills,BB101
+134,N,2025,9,9,CR,Seattle Seahawks,SS117,Washington Commanders,WC134
+135,N,2025,9,9,CR,Arizona Cardinals,AC121,Dallas Cowboys,DC098
+136,N,2025,10,10,DR,Las Vegas Raiders,LR132,Denver Broncos,DB106
+137,N,2025,10,10,NCR,Atlanta Falcons,AF112,Indianapolis Colts,IC119
+138,N,2025,10,10,DR,New Orleans Saints,NS113,Carolina Panthers,CP124
+139,N,2025,10,10,CR,New York Giants,NG042,Chicago Bears,CB026
+140,N,2025,10,10,DR,Jacksonville Jaguars,JJ125,Houston Texans,HT129
+141,N,2025,10,10,DR,Buffalo Bills,BB101,Miami Dolphins,MD111
+142,N,2025,10,10,NCR,Baltimore Ravens,BR126,Minnesota Vikings,MV108
+143,N,2025,10,10,CR,Cleveland Browns,CB085,New York Jets,NJ110
+144,N,2025,10,10,NCR,New England Patriots,NP115,Tampa Bay Buccaneers,TB116
+145,N,2025,10,10,DR,Arizona Cardinals,AC121,Seattle Seahawks,SS117
+146,N,2025,10,10,DR,Los Angeles Rams,LR130,San Francisco 49ers,S4086
+147,N,2025,10,10,CR,Detroit Lions,DL069,Washington Commanders,WC134
+148,N,2025,10,10,CR,Pittsburgh Steelers,PS073,Los Angeles Chargers,LC131
+149,N,2025,10,10,CR,Philadelphia Eagles,PE066,Green Bay Packers,GP020
+150,N,2025,11,11,DR,New York Jets,NJ110,New England Patriots,NP115
+151,N,2025,11,11,NCR,Washington Commanders,WC134,Miami Dolphins,MD111
+152,N,2025,11,11,DR,Carolina Panthers,CP124,Atlanta Falcons,AF112
+153,N,2025,11,11,NCR,Tampa Bay Buccaneers,TB116,Buffalo Bills,BB101
+154,N,2025,11,11,CR,Los Angeles Chargers,LC131,Jacksonville Jaguars,JJ125
+155,N,2025,11,11,DR,Chicago Bears,CB026,Minnesota Vikings,MV108
+156,N,2025,11,11,CR,Green Bay Packers,GP020,New York Giants,NG042
+157,N,2025,11,11,DR,Houston Texans,HT129,Tennessee Titans,TT128
+158,N,2025,11,11,DR,Cincinnati Bengals,CB114,Pittsburgh Steelers,PS073
+159,N,2025,11,11,DR,San Francisco 49ers,S4086,Arizona Cardinals,AC121
+160,N,2025,11,11,DR,Seattle Seahawks,SS117,Los Angeles Rams,LR130
+161,N,2025,11,11,DR,Baltimore Ravens,BR126,Cleveland Browns,CB085
+162,N,2025,11,11,DR,Kansas City Chiefs,KC109,Denver Broncos,DB106
+163,N,2025,11,11,CR,Detroit Lions,DL069,Philadelphia Eagles,PE066
+164,N,2025,11,11,NCR,Dallas Cowboys,DC098,Las Vegas Raiders,LR132
+165,N,2025,12,12,CR,Buffalo Bills,BB101,Houston Texans,HT129
+166,N,2025,12,12,NCR,Pittsburgh Steelers,PS073,Chicago Bears,CB026
+167,N,2025,12,12,CR,New England Patriots,NP115,Cincinnati Bengals,CB114
+168,N,2025,12,12,CR,New York Giants,NG042,Detroit Lions,DL069
+169,N,2025,12,12,DR,Minnesota Vikings,MV108,Green Bay Packers,GP020
+170,N,2025,12,12,CR,Indianapolis Colts,IC119,Kansas City Chiefs,KC109
+171,N,2025,12,12,NCR,Seattle Seahawks,SS117,Tennessee Titans,TT128
+172,N,2025,12,12,CR,New York Jets,NJ110,Baltimore Ravens,BR126
+173,N,2025,12,12,NCR,Jacksonville Jaguars,JJ125,Arizona Cardinals,AC121
+174,N,2025,12,12,CR,Cleveland Browns,CB085,Las Vegas Raiders,LR132
+175,N,2025,12,12,DR,Philadelphia Eagles,PE066,Dallas Cowboys,DC098
+176,N,2025,12,12,DR,Atlanta Falcons,AF112,New Orleans Saints,NS113
+177,N,2025,12,12,CR,Tampa Bay Buccaneers,TB116,Los Angeles Rams,LR130
+178,N,2025,12,12,CR,Carolina Panthers,CP124,San Francisco 49ers,S4086
+179,N,2025,13,13,DR,Green Bay Packers,GP020,Detroit Lions,DL069
+180,N,2025,13,13,NCR,Kansas City Chiefs,KC109,Dallas Cowboys,DC098
+181,N,2025,13,13,DR,Cincinnati Bengals,CB114,Baltimore Ravens,BR126
+182,N,2025,13,13,CR,Chicago Bears,CB026,Philadelphia Eagles,PE066
+183,N,2025,13,13,CR,Los Angeles Rams,LR130,Carolina Panthers,CP124
+184,N,2025,13,13,NCR,San Francisco 49ers,S4086,Cleveland Browns,CB085
+185,N,2025,13,13,DR,Houston Texans,HT129,Indianapolis Colts,IC119
+186,N,2025,13,13,NCR,New Orleans Saints,NS113,Miami Dolphins,MD111
+187,N,2025,13,13,NCR,Atlanta Falcons,AF112,New York Jets,NJ110
+188,N,2025,13,13,DR,Jacksonville Jaguars,JJ125,Tennessee Titans,TT128
+189,N,2025,13,13,CR,Arizona Cardinals,AC121,Tampa Bay Buccaneers,TB116
+190,N,2025,13,13,CR,Minnesota Vikings,MV108,Seattle Seahawks,SS117
+191,N,2025,13,13,CR,Buffalo Bills,BB101,Pittsburgh Steelers,PS073
+192,N,2025,13,13,DR,Las Vegas Raiders,LR132,Los Angeles Chargers,LC131
+193,N,2025,13,13,NCR,Denver Broncos,DB106,Washington Commanders,WC134
+194,N,2025,13,13,NCR,New York Giants,NG042,New England Patriots,NP115
+195,N,2025,14,14,CR,Dallas Cowboys,DC098,Detroit Lions,DL069
+196,N,2025,14,14,CR,Seattle Seahawks,SS117,Atlanta Falcons,AF112
+197,N,2025,14,14,CR,Tennessee Titans,TT128,Cleveland Browns,CB085
+198,N,2025,14,14,DR,Chicago Bears,CB026,Green Bay Packers,GP020
+199,N,2025,14,14,DR,Indianapolis Colts,IC119,Jacksonville Jaguars,JJ125
+200,N,2025,14,14,CR,Washington Commanders,WC134,Minnesota Vikings,MV108
+201,N,2025,14,14,DR,Miami Dolphins,MD111,New York Jets,NJ110
+202,N,2025,14,14,DR,Pittsburgh Steelers,PS073,Baltimore Ravens,BR126
+203,N,2025,14,14,DR,New Orleans Saints,NS113,Tampa Bay Buccaneers,TB116
+204,N,2025,14,14,DR,Denver Broncos,DB106,Las Vegas Raiders,LR132
+205,N,2025,14,14,CR,Cincinnati Bengals,CB114,Buffalo Bills,BB101
+206,N,2025,14,14,DR,Los Angeles Rams,LR130,Arizona Cardinals,AC121
+207,N,2025,14,14,CR,Houston Texans,HT129,Kansas City Chiefs,KC109
+208,N,2025,14,14,NCR,Philadelphia Eagles,PE066,Los Angeles Chargers,LC131
+209,N,2025,15,15,DR,Atlanta Falcons,AF112,Tampa Bay Buccaneers,TB116
+210,N,2025,15,15,NCR,Cleveland Browns,CB085,Chicago Bears,CB026
+211,N,2025,15,15,DR,Baltimore Ravens,BR126,Cincinnati Bengals,CB114
+212,N,2025,15,15,NCR,Arizona Cardinals,AC121,Houston Texans,HT129
+213,N,2025,15,15,CR,New York Jets,NJ110,Jacksonville Jaguars,JJ125
+214,N,2025,15,15,DR,Los Angeles Chargers,LC131,Kansas City Chiefs,KC109
+215,N,2025,15,15,DR,Buffalo Bills,BB101,New England Patriots,NP115
+216,N,2025,15,15,DR,Washington Commanders,WC134,New York Giants,NG042
+217,N,2025,15,15,NCR,Las Vegas Raiders,LR132,Philadelphia Eagles,PE066
+218,N,2025,15,15,NCR,Green Bay Packers,GP020,Denver Broncos,DB106
+219,N,2025,15,15,DR,Carolina Panthers,CP124,New Orleans Saints,NS113
+220,N,2025,15,15,CR,Detroit Lions,DL069,Los Angeles Rams,LR130
+221,N,2025,15,15,NCR,Indianapolis Colts,IC119,Seattle Seahawks,SS117
+222,N,2025,15,15,NCR,Tennessee Titans,TT128,San Francisco 49ers,S4086
+223,N,2025,15,15,CR,Minnesota Vikings,MV108,Dallas Cowboys,DC098
+224,N,2025,15,15,CR,Miami Dolphins,MD111,Pittsburgh Steelers,PS073
+225,N,2025,16,16,DR,Los Angeles Rams,LR130,Seattle Seahawks,SS117
+226,N,2025,16,16,DR,Green Bay Packers,GP020,Chicago Bears,CB026
+227,N,2025,16,16,DR,Philadelphia Eagles,PE066,Washington Commanders,WC134
+228,N,2025,16,16,DR,Tampa Bay Buccaneers,TB116,Carolina Panthers,CP124
+229,N,2025,16,16,CR,Buffalo Bills,BB101,Cleveland Browns,CB085
+230,N,2025,16,16,NCR,Los Angeles Chargers,LC131,Dallas Cowboys,DC098
+231,N,2025,16,16,NCR,New York Jets,NJ110,New Orleans Saints,NS113
+232,N,2025,16,16,CR,Minnesota Vikings,MV108,New York Giants,NG042
+233,N,2025,16,16,CR,Kansas City Chiefs,KC109,Tennessee Titans,TT128
+234,N,2025,16,16,CR,New England Patriots,NP115,Baltimore Ravens,BR126
+235,N,2025,16,16,CR,Atlanta Falcons,AF112,Arizona Cardinals,AC121
+236,N,2025,16,16,CR,Jacksonville Jaguars,JJ125,Denver Broncos,DB106
+237,N,2025,16,16,NCR,Pittsburgh Steelers,PS073,Detroit Lions,DL069
+238,N,2025,16,16,CR,Las Vegas Raiders,LR132,Houston Texans,HT129
+239,N,2025,16,16,CR,Cincinnati Bengals,CB114,Miami Dolphins,MD111
+240,N,2025,16,16,NCR,San Francisco 49ers,S4086,Indianapolis Colts,IC119
+241,N,2025,17,17,DR,Dallas Cowboys,DC098,Washington Commanders,WC134
+242,N,2025,17,17,DR,Detroit Lions,DL069,Minnesota Vikings,MV108
+243,N,2025,17,17,DR,Denver Broncos,DB106,Kansas City Chiefs,KC109
+244,N,2025,17,17,CR,Seattle Seahawks,SS117,Carolina Panthers,CP124
+245,N,2025,17,17,NCR,Arizona Cardinals,AC121,Cincinnati Bengals,CB114
+246,N,2025,17,17,DR,Pittsburgh Steelers,PS073,Cleveland Browns,CB085
+247,N,2025,17,17,DR,Jacksonville Jaguars,JJ125,Indianapolis Colts,IC119
+248,N,2025,17,17,NCR,Baltimore Ravens,BR126,Green Bay Packers,GP020
+249,N,2025,17,17,NCR,Tampa Bay Buccaneers,TB116,Miami Dolphins,MD111
+250,N,2025,17,17,DR,New England Patriots,NP115,New York Jets,NJ110
+251,N,2025,17,17,NCR,New Orleans Saints,NS113,Tennessee Titans,TT128
+252,N,2025,17,17,NCR,New York Giants,NG042,Las Vegas Raiders,LR132
+253,N,2025,17,17,CR,Houston Texans,HT129,Los Angeles Chargers,LC131
+254,N,2025,17,17,NCR,Philadelphia Eagles,PE066,Buffalo Bills,BB101
+255,N,2025,17,17,CR,Chicago Bears,CB026,San Francisco 49ers,S4086
+256,N,2025,17,17,CR,Los Angeles Rams,LR130,Atlanta Falcons,AF112
+257,N,2025,18,18,DR,New Orleans Saints,NS113,Atlanta Falcons,AF112
+258,N,2025,18,18,DR,New York Jets,NJ110,Buffalo Bills,BB101
+259,N,2025,18,18,DR,Detroit Lions,DL069,Chicago Bears,CB026
+260,N,2025,18,18,DR,Cleveland Browns,CB085,Cincinnati Bengals,CB114
+261,N,2025,18,18,DR,Los Angeles Chargers,LC131,Denver Broncos,DB106
+262,N,2025,18,18,DR,Indianapolis Colts,IC119,Houston Texans,HT129
+263,N,2025,18,18,DR,Tennessee Titans,TT128,Jacksonville Jaguars,JJ125
+264,N,2025,18,18,DR,Green Bay Packers,GP020,Minnesota Vikings,MV108
+265,N,2025,18,18,DR,Miami Dolphins,MD111,New England Patriots,NP115
+266,N,2025,18,18,DR,Dallas Cowboys,DC098,New York Giants,NG042
+267,N,2025,18,18,DR,Washington Commanders,WC134,Philadelphia Eagles,PE066
+268,N,2025,18,18,DR,Baltimore Ravens,BR126,Pittsburgh Steelers,PS073
+269,N,2025,18,18,DR,Kansas City Chiefs,KC109,Las Vegas Raiders,LR132
+270,N,2025,18,18,DR,Arizona Cardinals,AC121,Los Angeles Rams,LR130
+271,N,2025,18,18,DR,Seattle Seahawks,SS117,San Francisco 49ers,S4086
+272,N,2025,18,18,DR,Carolina Panthers,CP124,Tampa Bay Buccaneers,TB116
