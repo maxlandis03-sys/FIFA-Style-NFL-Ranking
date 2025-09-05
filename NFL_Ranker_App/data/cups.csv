@@ -1,0 +1,99 @@
+franchise _a,franchise_b,cup_name
+DL069,CB026,Gridiron Feast Cup
+GP020,CB026,Original Rivalry Cup
+GP020,DL069,Rust & Tundra Cup
+MV108,CB026,Norse Monsters Cup
+MV108,DL069,Roar of Valhalla Cup
+MV108,GP020,Frozen North Cup
+DC098,DL069,Thanksgiving Cup
+DC098,GP020,Frozen Star Cup
+DC098,MV108,Valhalla Star Cup
+NG042,CB026,Gridiron Origins Cup
+NG042,GP020,Frozen Empire Cup
+NG042,DC098,Bright Lights Cup
+PE066,DC098,Spur & Talon Cup
+PE066,NG042,Liberty Cup
+WC134,CB026,Monsters & Monuments Cup
+WC134,DC098,America's Cup
+WC134,NG042,Monumental Cup
+WC134,PE066,Capitals Cup
+AAF112,TB116,Gulfstream Cup
+CP124,TB116,Southern Horizon Cup
+CP124,AAF112,I-85 Cup
+NS113,TB116,Gulf Coast Cup
+NS113,AAF112,Deep South Cup
+NS113,CP124,Crescent & Claw Cup
+S4086,CB026,The Midway's Gold Cup
+S4086,DL069,Rust & Rush Cup
+S4086,GP020,Tundra & Treasure Cup
+S4086,MV108,Frozen Gold Cup
+S4086,DC098,Star of Gold Cup
+S4086,NG042,Concrete & Gold Cup
+AC121,CB026,Founders Cup
+AC121,S4086,Golden Dunes Cup
+LR130,DL069,Rust & Glamour Cup
+LR130,MV108,Frozen Horns Cup
+LR130,S4086,California Gold Cup
+LR130,AC121,Charter Clash Cup
+SS117,S4086,Skies of Gold Cup
+SS117,AC121,Rain & Flame Cup
+SS117,LR130,Pacific Clash Cup
+BR126,NG042,Crown of Shadows Cup
+BR126,S4086,Dark Gold Cup
+CB114,S4086,Crown of the Queen & Gate Cup
+CB114,BR126,Stripe & Shadow Cup
+CB085,CB026,Lakefront Cup
+CB085,DL069,Industrial Crown Cup
+CB085,PE066,Iron Bell Cup
+CB085,LR130,Lake & Coast Cup
+CB085,BR126,Stolen Legacy Cup
+CB085,CB114,Batte of Ohio Cup
+PS073,GP020,Frozen Forge Cup
+PS073,MV108,Valhalla Curtain Cup
+PS073,DC098,Iron Star Cup
+PS073,PE066,Keystone Cup
+PS073,BR126,Blood & Iron Cup
+PS073,CB114,Iron Jungle Cup
+PS073,CB085,Rust Belt Cup
+BB101,DC098,Empire & Star Cup
+MD111,MV108,Sun & Ice Cup
+MD111,DC098,Ocean Star Cup
+MD111,WC134,Capital Coast Cup
+MD111,BB101,Frozen Tide Cup
+NJ110,NG042,Empire Cup
+NJ110,BB101,Niagra & Hudson Cup
+NJ110,MD111,Wings & Waves Cup
+NP115,CB026,Midway's Revolution Cup
+NP115,NG042,Revolution & Empire Cup
+NP115,SS117,Atlantic & Pacific Cup
+NP115,BR126,Harbor & Harbor Cup
+NP115,PS073,Steel & Patriot Cup
+NP115,BB101,Powder Horn Cup
+NP115,MD111,Tea & Sea Cup
+NP115,NJ110,Skies of Revolution Cup
+IC119,CB026,Midway & Horses Cup
+IC119,NG042,Gridiron Dawn Cup
+IC119,NJ110,Union Cup
+IC119,NP115,Freedom's Reins Cup
+JJ125,IC119,Racing Sun Cup
+HT129,IC119,Lone Star Gallop Cup
+HT129,JJ125,Sunbelt Cup
+TT128,IC119,Gallop of the Gods Cup
+TT128,JJ125,South's Fury Cup
+TT128,HT129,Oilers' Ghost Cup
+DB106,DC098,Frontier Cup
+LC131,DB106,Rocky Storm Cup
+KC109,GP020,Super Bowl Origins Cup
+KC109,MV108,Crown & Arrow Cup
+KC109,S4086,Golden Arrow Cup
+KC109,BB101,Thundering Arrows Cup
+KC109,DB106,Plains & Peaks Cup
+KC109,LC131,Storm of Arrows Cup
+LR132,GP020,Lombardi's Last Cup
+LR132,MV108,Pillagers' Cup
+LR132,PE066,Silver Liberty Cup
+LR132,TB116,High Seas Cup
+LR132,PS073,Curtain & Crossbones Cup
+LR132,DB106,High Noon Cup
+LR132,LC131,Thunder & Pluder Cup
+LR132,KC109,Frontier War Cup
