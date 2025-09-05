@@ -314,6 +314,18 @@ def canonicalize(registry, season, team_id):
         return registry[season]["canonical"][team_id]
     return team_id
 
+def prune_to_active_season(ratings: Dict[str, float], season: int, registry) -> Dict[str, float]:
+    act = set(registry.get(int(season), {}).get("active", set()))
+    if not act:
+        return ratings
+    pruned: Dict[str, float] = {}
+    for t, r in list(ratings.items()):
+        t_can = canonicalize(registry, int(season), str(t))
+        if t_can in act:
+            # If multiple old IDs map to same canonical, keep the max rating (arbitrary tie-break)
+            pruned[t_can] = max(pruned.get(t_can, r), r)
+    return pruned
+
 # -------------------- SQLITE --------------------
 def init_db():
     with connect_db() as con:
@@ -1100,7 +1112,8 @@ def baseline_ratings(season:int, week:int, registry, events_csv: pd.DataFrame) -
     if not base:
         return {}
     last_left, last_left_league = {}, {}
-    return apply_week0_events_to_ratings(base.copy(), season, events_csv, last_left, last_left_league, registry)
+    snap = apply_week0_events_to_ratings(base.copy(), season, events_csv, last_left, last_left_league, registry)
+    return prune_to_active_season(snap, season, registry)
 
 # -------------------- RECOMPUTE --------------------
 def recompute_ratings_from(season_start, week_start, registry):
@@ -1131,14 +1144,17 @@ def recompute_ratings_from(season_start, week_start, registry):
                 s = int(s); w = int(w)
                 if s not in applied_week0_for_season:
                     ratings = apply_week0_events_to_ratings(ratings, s, events, last_left, last_left_league, registry)
+                    ratings = prune_to_active_season(ratings, s, registry)
                     applied_week0_for_season.add(s)
 
                 if s not in snapshotted_week0:
+                    # NEW: remove stale Week 0 rows for this season so defunct teams can’t linger
+                    cur.execute("DELETE FROM ratings WHERE season = ? AND week = 0", (s,))
                     for t, r in ratings.items():
                         cur.execute(
                             "INSERT OR REPLACE INTO ratings (team_ID, season, week, rating) VALUES (?,?,?,?)",
                             (t, s, 0, float(r))
-                        )
+        )
                     snapshotted_week0.add(s)
 
                 for _, g in week_df.iterrows():
