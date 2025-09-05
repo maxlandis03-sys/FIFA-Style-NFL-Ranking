@@ -119,7 +119,170 @@ def safe_int(x, default=None):
     except Exception:
         return default
 
+def _division_key_row(r) -> tuple[str, str]:
+    conf = (str(r.get("conference_display","")).strip()
+            or str(r.get("conference_id","")).strip() or "")
+    div  = (str(r.get("division_display","")).strip()
+            or str(r.get("division_id","")).strip() or "")
+    return conf, div
+
+def _root_of_team_id(team_id: str, fr_map: dict[str,set[str]]) -> Optional[str]:
+    team_id = str(team_id).strip()
+    # Deterministically pick the first root whose members include this team ID
+    for root, members in fr_map.items():
+        if team_id in members:
+            return root
+    return None
+
+def active_nfl_divisions_for_season(season: int,
+                                    divisions_df: pd.DataFrame,
+                                    events_df: pd.DataFrame,
+                                    teams_df: pd.DataFrame,
+                                    registry) -> tuple[list[dict], dict[str,str], dict[str,str]]:
+    """
+    Returns:
+      divisions: list of {conf, div, roots: [franchise_root], team_ids: [teamID in this season]}
+      root_to_teamid: franchise_root -> the active teamID for this season
+      root_to_label: franchise_root -> team display name (for this season)
+    Only uses NFL ('N') rows of divisions.csv for the season.
+    """
+    season = int(season)
+    sub = divisions_df[
+        (divisions_df["season"].apply(lambda x: safe_int(x)) == season) &
+        (divisions_df["league_indicator"].map(norm_league) == "N")
+    ].copy()
+    if sub.empty:
+        return [], {}, {}
+
+    fr_map, _, _ = build_franchise_index(events_df, teams_df)
+    disp_map = registry.get(season, {}).get("display", {})
+
+    # group by division
+    groups = {}
+    for _, r in sub.iterrows():
+        conf, div = _division_key_row(r)
+        tid = str(r.get("team_id","")).strip()
+        root = _root_of_team_id(tid, fr_map)
+        if not tid or not root:
+            continue
+        key = (conf, div)
+        g = groups.setdefault(key, {"conf": conf, "div": div, "roots": [], "team_ids": []})
+        g["roots"].append(root)
+        g["team_ids"].append(tid)
+
+    # Prepare maps for quick labels
+    root_to_teamid: dict[str, str] = {}
+    root_to_label: dict[str, str] = {}
+    for g in groups.values():
+        for root, tid in zip(g["roots"], g["team_ids"]):
+            root_to_teamid[root] = tid
+            root_to_label[root] = disp_map.get(tid, tid)
+
+    # Sort divisions by conference then division label; ensure each has 4 members
+    divisions = sorted(groups.values(), key=lambda x: (x["conf"], x["div"]))
+    return divisions, root_to_teamid, root_to_label
+
+@st.cache_data(ttl=60)
+def _load_all_nfl_games_for_h2h() -> pd.DataFrame:
+    # lean frame for speed
+    with connect_db() as con:
+        g = pd.read_sql_query(
+            "SELECT team_a_ID, team_a_score, team_b_ID, team_b_score "
+            "FROM games WHERE league_indicator = 'N'",
+            con
+        )
+    # normalize numeric
+    if not g.empty:
+        g["team_a_score"] = pd.to_numeric(g["team_a_score"], errors="coerce").fillna(0).astype(int)
+        g["team_b_score"] = pd.to_numeric(g["team_b_score"], errors="coerce").fillna(0).astype(int)
+        for c in ("team_a_ID", "team_b_ID"):
+            g[c] = g[c].astype(str)
+    return g
+
+def h2h_map_for_selected_franchise(selected_root: str,
+                                   opponent_roots: set[str],
+                                   events_df: pd.DataFrame,
+                                   teams_df: pd.DataFrame) -> dict[str, dict]:
+    """
+    For one selected franchise (root) compute all-time NFL head-to-head vs each
+    opponent root in `opponent_roots`. Uses franchise membership across eras.
+    Returns: opp_root -> {"W":int,"L":int,"T":int,"PD":int}
+    """
+    fr_map, _, _ = build_franchise_index(events_df, teams_df)
+    mine = set(fr_map.get(selected_root, set()))
+    if not mine:
+        return {}
+
+    # Build a mapping from every known team id to the opponent root it belongs to (for the active set)
+    id_to_opp: dict[str, str] = {}
+    for opp in opponent_roots:
+        mem = fr_map.get(opp, set())
+        for tid in mem:
+            if tid not in mine:
+                id_to_opp.setdefault(tid, opp)  # first wins, deterministic enough
+
+    out: dict[str, dict] = {opp: {"W":0, "L":0, "T":0, "PD":0} for opp in opponent_roots}
+    g = _load_all_nfl_games_for_h2h()
+    if g.empty:
+        return out
+
+    for _, row in g.iterrows():
+        a, b = row["team_a_ID"], row["team_b_ID"]
+        sa, sb = int(row["team_a_score"]), int(row["team_b_score"])
+
+        # Case 1: my franchise is A, opponent is B
+        if a in mine and b in id_to_opp:
+            opp = id_to_opp[b]
+            if sa > sb: out[opp]["W"] += 1
+            elif sa < sb: out[opp]["L"] += 1
+            else: out[opp]["T"] += 1
+            out[opp]["PD"] += (sa - sb)
+            continue
+
+        # Case 2: my franchise is B, opponent is A
+        if b in mine and a in id_to_opp:
+            opp = id_to_opp[a]
+            if sb > sa: out[opp]["W"] += 1
+            elif sb < sa: out[opp]["L"] += 1
+            else: out[opp]["T"] += 1
+            out[opp]["PD"] += (sb - sa)
+
+    return out
+
+def _holder_is_selected(rec: dict) -> Optional[bool]:
+    """Return True if selected franchise holds the cup, False if opponent does, None if perfectly tied."""
+    w, l, t, pd = rec.get("W",0), rec.get("L",0), rec.get("T",0), rec.get("PD",0)
+    if w > l: return True
+    if l > w: return False
+    # wins tied -> PD tiebreak
+    if pd > 0: return True
+    if pd < 0: return False
+    return None  # perfectly tied, no holder
+
+def _format_record(rec: dict) -> str:
+    return f"{rec.get('W',0)}–{rec.get('L',0)}–{rec.get('T',0)} • PD {rec.get('PD',0):+d}"
+
 # -------------------- LOAD CSVs --------------------
+# --- optional cups file (pairwise custom names) ---
+CUPS_CSV = DATA_DIR / "cups.csv"
+
+def load_cups_csv() -> pd.DataFrame:
+    """
+    Optional file to customize cup names between franchise pairs.
+    Columns:
+      franchise_a, franchise_b, cup_name
+    The values for franchise_* are franchise roots (see Franchise Stats tab).
+    If missing, we will auto-name as '<Team A> – <Team B> Cup'.
+    """
+    cols = ["franchise_a", "franchise_b", "cup_name"]
+    if not CUPS_CSV.exists():
+        return pd.DataFrame(columns=cols)
+    df = pd.read_csv(CUPS_CSV, dtype=str).fillna("")
+    for c in cols:
+        if c not in df.columns:
+            df[c] = ""
+    return df[cols]
+
 # --- optional, for pre-1933 or corrections ---
 LEAGUE_CHAMPIONS_CSV = DATA_DIR / "league_champions.csv"
 
@@ -2057,7 +2220,7 @@ if ratings_is_empty():
 # Load upcoming fixtures (separate file)
 upcoming_df = load_upcoming_csv()
 
-tabs = st.tabs(["Ratings", "Add Game", "Games", "Events", "Teams", "Upcoming", "Simulator", "Franchise Stats"])
+tabs = st.tabs(["Ratings", "Add Game", "Games", "Events", "Teams", "Upcoming", "Simulator", "Franchise Stats", "Trophy Case"])
 
 # ---------- Add Game (real) ----------
 with tabs[1]:
@@ -2486,3 +2649,107 @@ with tabs[7]:
                 st.dataframe(cnt_df, use_container_width=False, hide_index=True)
         else:
             st.info("No playoff wins found for this franchise.")
+
+# ---------- Trophy Case (NFL Cups) ----------
+with tabs[8]:
+    st.subheader("Trophy Case (NFL Cups)")
+    st.caption("Holder = better all-time NFL record; ties broken by point differential.")
+
+    # Choose season (to know the current divisions) -> pick latest NFL season in divisions.csv
+    nfl_div_seasons = divisions_csv[divisions_csv["league_indicator"].map(norm_league) == "N"]["season"].dropna()
+    nfl_div_seasons = pd.to_numeric(nfl_div_seasons, errors="coerce").dropna().astype(int).tolist()
+    if not nfl_div_seasons:
+        st.info("No NFL divisions found. Add divisions.csv rows for the season you want.")
+    else:
+        default_season = max(nfl_div_seasons)
+        q_season = st.number_input("Season (for divisions layout)", min_value=min(nfl_div_seasons),
+                                   max_value=max(nfl_div_seasons), value=default_season, step=1)
+
+        divisions, root_to_teamid, root_to_label = active_nfl_divisions_for_season(
+            int(q_season), divisions_csv, events_csv, teams_csv, registry
+        )
+        if not divisions:
+            st.info(f"No NFL division data for {q_season}.")
+        else:
+            # Build franchise pick list from active NFL teams this season
+            active_roots = []
+            active_labels = []
+            for d in divisions:
+                for r in d["roots"]:
+                    active_roots.append(r)
+                    active_labels.append(root_to_label.get(r, r))
+            # Dedup while preserving order
+            seen = set(); opts = []
+            for r, lab in zip(active_roots, active_labels):
+                if r not in seen:
+                    opts.append((lab, r)); seen.add(r)
+            labels_only = [x[0] for x in opts]
+            pick = st.selectbox("Franchise", labels_only, index=0)
+            selected_root = dict(opts)[pick]
+
+            # Identify the user's division row and put it first
+            my_div_idx = None
+            for i, d in enumerate(divisions):
+                if selected_root in d["roots"]:
+                    my_div_idx = i
+                    break
+            ordered = []
+            if my_div_idx is not None:
+                # top row: my division (remove me -> 3 opponents)
+                mine = divisions[my_div_idx].copy()
+                roots_no_self = [r for r in mine["roots"] if r != selected_root]
+                mine["roots"] = roots_no_self
+                ordered.append(mine)
+                # the rest below
+                ordered.extend([d for j, d in enumerate(divisions) if j != my_div_idx])
+            else:
+                ordered = divisions
+
+            # Compute H2H vs all active opponents once
+            opp_set = set([r for d in ordered for r in d["roots"]])
+            h2h = h2h_map_for_selected_franchise(selected_root, opp_set, events_csv, teams_csv)
+
+            # Optional cup names
+            cups_df = load_cups_csv()
+            cup_name_map = {}
+            for _, r in cups_df.iterrows():
+                a = str(r.get("franchise_a","")).strip()
+                b = str(r.get("franchise_b","")).strip()
+                n = str(r.get("cup_name","")).strip()
+                if a and b and n:
+                    cup_name_map[(tuple(sorted([a,b])))] = n
+
+            def cup_name(a_root: str, b_root: str) -> str:
+                k = tuple(sorted([a_root, b_root]))
+                if k in cup_name_map:
+                    return cup_name_map[k]
+                # fallback auto-name from this season's labels
+                la = root_to_label.get(a_root, a_root)
+                lb = root_to_label.get(b_root, b_root)
+                return f"{la} – {lb} Cup"
+
+            # Render rows: top (3) then the rest (4 each)
+            for row_i, d in enumerate(ordered):
+                conf, div = d["conf"], d["div"]
+                row_roots = d["roots"]
+                ncols = len(row_roots)  # 3 for my division; otherwise usually 4
+                if ncols == 0:
+                    continue
+                st.markdown(f"#### {conf} {div}")
+                cols = st.columns(ncols)
+                for j, opp_root in enumerate(row_roots):
+                    rec = h2h.get(opp_root, {"W":0,"L":0,"T":0,"PD":0})
+                    has = _holder_is_selected(rec)
+                    opp_label = root_to_label.get(opp_root, opp_root)
+                    name = cup_name(selected_root, opp_root)
+                    owned_txt = "🏆 **Owned**" if has is True else ("— **Tied (no holder)**" if has is None else "❌ **Not owned**")
+                    with cols[j]:
+                        st.markdown(
+                            f"{owned_txt}  \n"
+                            f"**{name}**  \n"
+                            f"vs **{opp_label}**  \n"
+                            f"Record: `{_format_record(rec)}`"
+                        )
+
+            st.caption("Rule: Holder = best all-time NFL W-L in the series; if tied, higher all-time point differential holds. Perfect ties = no holder.")
+
