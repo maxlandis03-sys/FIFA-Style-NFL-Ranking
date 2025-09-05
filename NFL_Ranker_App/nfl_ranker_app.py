@@ -1496,7 +1496,7 @@ def franchise_titles_table(fr_root: str,
             div_label = (str(r.get("division_display","")).strip()
                          or str(r.get("division_id","")).strip())
             if div_label:
-                rows.append({"Season": s, "Level": "Division", "Title": div_label})
+                rows.append({"Season": s, "Level": "Division", "Title": f"{div_label} Champion"})
 
         # Cache conference labels and record CSV-marked champs
         for _, r in sub.iterrows():
