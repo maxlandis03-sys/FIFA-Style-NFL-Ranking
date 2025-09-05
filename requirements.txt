@@ -1,6 +1,3 @@
 streamlit>=1.36
 pandas>=2.2
 altair>=5.2
-GH_Owner>=maxlandis03-sys
-GH_REPO>=FIFA-Style-NFL-Ranking
-GH_Branch>=main
