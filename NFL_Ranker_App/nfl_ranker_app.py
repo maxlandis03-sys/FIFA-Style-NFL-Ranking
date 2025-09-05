@@ -7,6 +7,52 @@ from pathlib import Path
 from threading import Lock
 from typing import Dict, Optional, Iterable
 
+
+# --- GitHub sync helpers ---
+import os, base64, json, requests
+
+GH_OWNER  = st.secrets.get("GH_OWNER",  os.getenv("GH_OWNER"))
+GH_REPO   = st.secrets.get("GH_REPO",   os.getenv("GH_REPO"))
+GH_BRANCH = st.secrets.get("GH_BRANCH", os.getenv("GH_BRANCH", "main"))
+GH_TOKEN  = st.secrets.get("GH_TOKEN",  os.getenv("GH_TOKEN"))
+
+def _gh_enabled() -> bool:
+    return all([GH_OWNER, GH_REPO, GH_BRANCH, GH_TOKEN])
+
+def _gh_headers():
+    return {"Authorization": f"token {GH_TOKEN}", "Accept": "application/vnd.github+json"}
+
+def _gh_get_sha(path: str) -> Optional[str]:
+    url = f"https://api.github.com/repos/{GH_OWNER}/{GH_REPO}/contents/{path}?ref={GH_BRANCH}"
+    r = requests.get(url, headers=_gh_headers())
+    if r.status_code == 200:
+        try:
+            return r.json().get("sha")
+        except Exception:
+            return None
+    return None
+
+def gh_upsert_file(repo_path: str, bytes_content: bytes, message: str):
+    """Create or update a file at repo_path on GH_BRANCH."""
+    url = f"https://api.github.com/repos/{GH_OWNER}/{GH_REPO}/contents/{repo_path}"
+    payload = {
+        "message": message,
+        "branch": GH_BRANCH,
+        "content": base64.b64encode(bytes_content).decode("ascii"),
+    }
+    sha = _gh_get_sha(repo_path)
+    if sha:
+        payload["sha"] = sha
+    r = requests.put(url, headers=_gh_headers(), data=json.dumps(payload), timeout=30)
+    r.raise_for_status()
+
+def gh_sync_to_repo(paths_to_commit: dict[str, Path], message: str):
+    """paths_to_commit: {'data/games.csv': Path('/app/data/games.csv'), ...}"""
+    if not _gh_enabled():
+        return
+    for repo_path, local_path in paths_to_commit.items():
+        gh_upsert_file(repo_path, local_path.read_bytes(), message)
+        
 # -------------------- PATHS --------------------
 from pathlib import Path
 
@@ -2055,7 +2101,18 @@ with tabs[1]:
             recompute_ratings_from(int(season), int(week_order), registry)
             _invalidate_cached_dropdowns()
             st.success(f"Saved {gid} and recomputed ratings from {season}, week {week_order} onward.")
-
+            try:
+                gh_sync_to_repo(
+                    {
+                        "data/games.csv": DATA_DIR / "games.csv",
+                        # include upcoming if you want it tracked even when unchanged
+                        "data/games_upcoming.csv": UPCOMING_CSV if UPCOMING_CSV.exists() else DATA_DIR / "games_upcoming.csv",
+                    },
+                    message=f"Add game {gid} ({team_a_display} {score_a}–{score_b} {team_b_display})"
+                )
+                st.success("Synced data back to GitHub.")
+            except Exception as e:
+                st.warning(f"Couldn’t push CSVs to GitHub: {e}")
 # ---------- Games (real list) ----------
 with tabs[2]:
     st.subheader("Games (actual)")
@@ -2181,7 +2238,18 @@ with tabs[5]:
                 recompute_ratings_from(s_season, s_week, registry)
                 _invalidate_cached_dropdowns()
                 st.success(f"Promoted {gid} and recomputed from {s_season}, week {s_week} onward.")
-
+                try:
+                    gh_sync_to_repo(
+                        {
+                            "data/games.csv": DATA_DIR / "games.csv",
+                            "data/games_upcoming.csv": UPCOMING_CSV,
+                        },
+                        message=f"Promote upcoming -> actual: {gid} "
+                                f"({row['team_a_display']} {int(sc_a)}–{int(sc_b)} {row['team_b_display']})"
+                    )
+                    st.success("Synced data back to GitHub.")
+                except Exception as e:
+                    st.warning(f"Couldn’t push CSVs to GitHub: {e}")
 # ---------- Simulator (what-if; does NOT save) ----------
 with tabs[6]:
     st.subheader("Simulator (what-if; no changes are saved)")
