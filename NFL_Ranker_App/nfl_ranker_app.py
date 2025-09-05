@@ -1445,7 +1445,7 @@ def _super_bowl_title_for_season(season: int) -> str:
     num = int(season) - 1965
     if num == 50:
         return "Super Bowl 50"
-    return f"Super Bowl {_to_roman(num)}"
+    return f"Super Bowl {_to_roman(num)} Champion"
 
 def franchise_titles_table(fr_root: str,
                            divisions_df: pd.DataFrame,
